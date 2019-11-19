@@ -1,9 +1,9 @@
 <?php
 
     $users = [
-       [$email = "aaa@aaa.com", $pwd = "aaa"],
-       [$email = "bbb@bbb.com", $pwd = "bbb"],
-       [$email = "ccc@ccc.com", $pwd = "ccc"]
+       ["email" => "aaa@aaa.com", "pwd" => "aaa"],
+       ["email" => "bbb@bbb.com", "pwd" => "bbb"],
+       ["email" => "ccc@ccc.com", "pwd" => "ccc"]
     ];
     //Démarrage de session
     session_start();//toutes les pages qu'on souhaite sécuriser doit commencer par cette expression
