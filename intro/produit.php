@@ -1,3 +1,6 @@
+<?php
+    require "exo/tag.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +30,9 @@
     $resultat = $premierNum * $deuxiemeNum;
     ?>
 
+    <?php
+        echo htmlTag("p", "test de la fonction htmltag");
+    ?>
 
     <p class="p-3 mb-2 bg-info text-white">
         <?php echo "Le résultat de la multiplication de $premierNum x $deuxiemeNum  =" ?> <?php echo $premierNum  * $deuxiemeNum; ?>

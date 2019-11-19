@@ -10,7 +10,7 @@
  * @param bool $autoclosed : la balise est elle auto-fermante?
  * @return string
  */
-function htmlTag(string $tag, string $content = "", bool $autoclosed, array $attributes = []):string {
+function htmlTag(string $tag, string $content = "", bool $autoclosed = false, array $attributes = []):string {
     //declaration variable pour recueillir la balise fermante
     $baliseFermeture = "";
     //si variable est true alors
@@ -29,6 +29,6 @@ function htmlTag(string $tag, string $content = "", bool $autoclosed, array $att
     return "<"."$tag "."$new_cleVal".">"."$content"."$baliseFermeture";
 };
 
-echo htmlTag("img", "", false, ["src"=>'"img/toureffeil.png"', "class"=>'"btn-danger"']);
-echo "\n";
-echo htmlTag("p", "Bienvenu dans le générateur de contenu HTML", true, ["style"=>'"color:red"', "class"=>'"btn-danger"']);
+#echo htmlTag("img", "", false, ["src"=>'"img/toureffeil.png"', "class"=>'"btn-danger"']);
+#echo "\n";
+#echo htmlTag("p", "Bienvenu dans le générateur de contenu HTML", true, ["style"=>'"color:red"', "class"=>'"btn-danger"']);
