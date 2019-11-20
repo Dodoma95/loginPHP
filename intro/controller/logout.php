@@ -6,7 +6,7 @@ session_regenerate_id();
 $_SESSION["message"] = "Vous êtes déconnecté";
 
 //redirection vers login
-header("location:login.php");
+header("location:mainApp.php?route=login");
 ?>
 
 

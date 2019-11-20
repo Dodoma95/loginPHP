@@ -6,7 +6,7 @@
        ["email" => "ccc@ccc.com", "pwd" => "ccc"]
     ];
     //Démarrage de session
-    session_start();//toutes les pages qu'on souhaite sécuriser doit commencer par cette expression
+    #session_start();//toutes les pages qu'on souhaite sécuriser doit commencer par cette expression
 
     $isPosted = filter_has_var(INPUT_POST, "submit");//tester si la variable submit existe
     $errors = [];
@@ -37,7 +37,7 @@
             //Stockage de l'email dans la session           
             $_SESSION["email"] = $email; //injection dans variable tableau de l'email
             //Redirection en cas de succès
-            header("location:intro.php"); // header sert a rediriger sur autre page en ecrivant dans l'url. NE PEUT ETRE UTILISE SEULEMENT SI PAS D'ECHOS ET EN DEHORS DU BLOC HTML    
+            header("location:mainApp.php?route=intro"); // header sert a rediriger sur autre page en ecrivant dans l'url. NE PEUT ETRE UTILISE SEULEMENT SI PAS D'ECHOS ET EN DEHORS DU BLOC HTML    
         } else {
             array_push($errors, "Credentials incorrect");
         }

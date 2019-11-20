@@ -1,14 +1,3 @@
-<?php
-session_start();
-
-if(isset($_SESSION["email"])){
-    $email = $_SESSION["email"];
-} else {
-    $_SESSION["message"] = "Vous devez être connecté pour accéder a la page intro";
-    header("location:login.php");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -50,6 +39,6 @@ if(isset($_SESSION["email"])){
         Votre email est <?= $email ?>
     </h1>
 
-    <a href="logout.php">Déconnection</a>
+    <a href="mainApp.php?route=logout">Déconnection</a>
 </body>
 </html>
