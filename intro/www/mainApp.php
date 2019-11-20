@@ -12,9 +12,35 @@ define("MODEL_PATH", ROOT_PATH."/model");
 $route = filter_input(INPUT_GET, "route") ?? "default";
 #echo $route;
 
+//gestion des messages flash
+//recupération du message flash
+$message = $_SESSION["message"] ?? "";
+unset($_SESSION["message"]); //suppression du message dans la session
+
+//définition de raccourcis pour les routes sous forme de tableau
+$routes = [
+    "test" => "controleur.php",
+    "contact" => "formulaire_contact.html",
+    "login" => "login.php",
+    "logout" => "logout.php",
+    "produit" => "produit.php",
+    "intro" => "intro.php",
+    "ma-photo" => "upload.php",
+    "person_json" => "persons.php"
+];
+
+if(array_key_exists($route, $routes)) {
+    $controller = $routes[$route];
+} else {
+    $controller = "404.html";
+    $route="404";
+}
+
 //test de l'authentification
 $publicRoutes = [
-    "login"
+    "login",
+    "produit",
+    "404"
 ];
 
 //si la route n'est pas public alors l'utilisateur ne peut acceder a la page sans etre logué
@@ -27,21 +53,6 @@ if (! in_array($route, $publicRoutes)){
     }
 }
 
-//définition de raccourcis pour les routes sous forme de tableau
-$routes = [
-    "test" => "controleur.php",
-    "contact" => "formulaire_contact.html",
-    "login" => "login.php",
-    "logout" => "logout.php",
-    "produit" => "produit.php",
-    "intro" => "intro.php"
-];
-
-if(array_key_exists($route, $routes)) {
-    $controller = $routes[$route];
-} else {
-    $controller = "404.html";
-}
 
 //Inclusion du controleur
 require CONTROLLER_PATH . "/$controller";

@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <?php
+<?php
 
         var_dump($_GET);//permet de retourner valeur passé dans url du navigateur sous forme de tableau super global
 
@@ -30,15 +19,9 @@
         } else {
             $age = 18;
         }*/
+
+        $title = "Intro";
+        $viewName = "introView";
+        require VIEW_PATH . "/gabarit.php";
         
     ?>
-
-    <h1>
-        Vous êtes bien connecté
-        <br>
-        Votre email est <?= $email ?>
-    </h1>
-
-    <a href="mainApp.php?route=logout">Déconnection</a>
-</body>
-</html>
