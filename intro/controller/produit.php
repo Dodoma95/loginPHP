@@ -1,5 +1,5 @@
 <?php
-    require "../exo/tag.php";
+    require "../lib/tag.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
